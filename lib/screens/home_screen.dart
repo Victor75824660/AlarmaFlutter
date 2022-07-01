@@ -4,6 +4,8 @@ import 'package:flutter_golang_yt/colors/app_colors.dart';
 import 'package:flutter_golang_yt/screens/add_task.dart';
 import 'package:flutter_golang_yt/screens/all_tasks.dart';
 import 'package:flutter_golang_yt/screens/map.dart';
+import 'package:flutter_golang_yt/screens/map2.dart';
+
 import 'package:flutter_golang_yt/screens/ubicacion.dart';
 import 'package:flutter_golang_yt/ui/portada.dart';
 import 'package:flutter_golang_yt/widgets/button_widget.dart';
@@ -45,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ]),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
+                height: MediaQuery.of(context).size.height / 3,
               ),
               InkWell(
                 onTap: () {
@@ -57,20 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundcolor: Colors.green,
                     text: "Mostrar Mapa",
                     textColor: Colors.black),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              InkWell(
-                onTap: () {
-                  Get.to(() => AllZone(),
-                      transition: Transition.fade,
-                      duration: Duration(seconds: 1));
-                },
-                child: ButtonWidget(
-                    backgroundcolor: Colors.blueAccent,
-                    text: "-",
-                    textColor: AppColors.smallTextColor),
               ),
               const SizedBox(
                 height: 10,
@@ -91,12 +79,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => obtenerUbi(),
+                  Get.to(() => Miubicacion(),
                       transition: Transition.fade,
                       duration: Duration(seconds: 1));
                 },
                 child: ButtonWidget(
-                    backgroundcolor: Colors.purpleAccent,
+                    backgroundcolor: Color.fromARGB(255, 243, 255, 10),
                     text: "Obtener Ubicación ",
                     textColor: Colors.black),
               )
