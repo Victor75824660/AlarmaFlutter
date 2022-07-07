@@ -5,10 +5,14 @@ import 'package:flutter_golang_yt/screens/add_task.dart';
 import 'package:flutter_golang_yt/screens/all_tasks.dart';
 import 'package:flutter_golang_yt/screens/map.dart';
 import 'package:flutter_golang_yt/screens/map2.dart';
+import 'package:flutter_golang_yt/screens/signin.dart';
+import 'package:flutter_golang_yt/screens/signup.dart';
 
 import 'package:flutter_golang_yt/screens/ubicacion.dart';
-import 'package:flutter_golang_yt/ui/portada.dart';
+
 import 'package:flutter_golang_yt/widgets/button_widget.dart';
+import 'package:flutter_golang_yt/widgets/cardinfo.dart';
+import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,6 +26,39 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          Container(
+              margin: EdgeInsets.fromLTRB(0, 15, 12, 0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignIn()));
+                },
+                child: Text(
+                  'Cerrar sesión',
+                  style: const TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16),
+                ),
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.pressed)) {
+                        return Colors.black26;
+                      }
+                      return Color.fromARGB(255, 217, 255, 0);
+                    }),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)))),
+              )),
+        ],
+      ),
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
@@ -65,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => Portada(),
+                  Get.to(() => cardInfo(""),
                       transition: Transition.fade,
                       duration: Duration(seconds: 1));
                 },

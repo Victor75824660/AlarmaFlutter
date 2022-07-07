@@ -1,4 +1,4 @@
-#Fri Jul 01 12:41:48 COT 2022
+#Wed Jul 06 23:57:21 COT 2022
 base.0=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

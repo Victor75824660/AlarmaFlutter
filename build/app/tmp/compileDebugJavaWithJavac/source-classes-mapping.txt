@@ -1,4 +1,4 @@
 io/flutter/plugins/GeneratedPluginRegistrant.java
  io.flutter.plugins.GeneratedPluginRegistrant
-com/example/flutter_golang_yt/BuildConfig.java
- com.example.flutter_golang_yt.BuildConfig
+com/certus/alarmaflutter/BuildConfig.java
+ com.certus.alarmaflutter.BuildConfig

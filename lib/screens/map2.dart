@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_golang_yt/screens/confirm.dart';
+import 'package:flutter_golang_yt/widgets/cardinfo.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -13,7 +15,7 @@ class _MiubicacionState extends State<Miubicacion> {
   late GoogleMapController googleMapController;
 
   static const CameraPosition initialCameraPosition = CameraPosition(
-      target: LatLng(37.42796133580664, -122.085749655962), zoom: 14);
+      target: LatLng(-12.045746722874203, -77.03055653148706), zoom: 14);
 
   Set<Marker> markers = {};
 
@@ -23,6 +25,34 @@ class _MiubicacionState extends State<Miubicacion> {
       appBar: AppBar(
         title: const Text("Encontrar mi ubicación"),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () async {
+                Position position = await _determinePosition();
+
+                googleMapController.animateCamera(
+                    CameraUpdate.newCameraPosition(CameraPosition(
+                        target: LatLng(position.latitude, position.longitude),
+                        zoom: 15)));
+
+                markers.clear();
+
+                markers.add(Marker(
+                    markerId: const MarkerId('currentLocation'),
+                    position: LatLng(position.latitude, position.longitude)));
+                void guardarUbi() {
+                  return print(
+                      "${position.longitude}" + ',' + "${position.latitude}");
+                }
+
+                String a = "${position.longitude}" + ',' "${position.latitude}";
+
+                guardarUbi();
+
+                setState(() {});
+              },
+              icon: Icon(Icons.location_on))
+        ],
       ),
       body: GoogleMap(
         initialCameraPosition: initialCameraPosition,
@@ -33,27 +63,19 @@ class _MiubicacionState extends State<Miubicacion> {
           googleMapController = controller;
         },
       ),
+      /**/
+
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           Position position = await _determinePosition();
-
-          googleMapController.animateCamera(CameraUpdate.newCameraPosition(
-              CameraPosition(
-                  target: LatLng(position.latitude, position.longitude),
-                  zoom: 15)));
-
-          markers.clear();
-          print("${position.longitude}" + ',' + "${position.latitude}");
-
-          markers.add(Marker(
-              markerId: const MarkerId('currentLocation'),
-              position: LatLng(position.latitude, position.longitude)));
-
-          setState(() {});
+          String a = "${position.longitude}" + ',' "${position.latitude}";
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => cardInfo(a)));
         },
-        label: const Text("Buscar"),
+        label: const Text("Enviar una Alerta"),
         icon: const Icon(Icons.location_history),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 

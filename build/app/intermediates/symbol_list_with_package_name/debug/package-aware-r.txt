@@ -1,4 +1,4 @@
-com.example.flutter_golang_yt
+com.certus.alarmaflutter
 attr activityAction
 attr activityName
 attr alpha

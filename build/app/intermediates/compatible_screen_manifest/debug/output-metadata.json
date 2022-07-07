@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.example.flutter_golang_yt",
+  "applicationId": "com.certus.alarmaflutter",
   "variantName": "debug",
   "elements": []
 }

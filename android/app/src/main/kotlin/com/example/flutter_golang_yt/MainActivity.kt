@@ -1,4 +1,4 @@
-package com.example.flutter_golang_yt
+package com.certus.alarmaflutter
 
 import io.flutter.embedding.android.FlutterActivity
 
