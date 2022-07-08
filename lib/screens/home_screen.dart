@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: ButtonWidget(
                     backgroundcolor: Colors.purpleAccent,
-                    text: "Registro de zonas ",
+                    text: "Ver mi Registro de Alertas",
                     textColor: Colors.black),
               ),
               const SizedBox(
@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: ButtonWidget(
                     backgroundcolor: Color.fromARGB(255, 243, 255, 10),
-                    text: "Obtener Ubicación ",
+                    text: "Enviar una Alerta",
                     textColor: Colors.black),
               )
             ]),

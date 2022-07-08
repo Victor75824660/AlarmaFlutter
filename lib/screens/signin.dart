@@ -54,10 +54,9 @@ class _SignInState extends State<SignIn> {
                     .signInWithEmailAndPassword(
                         email: _emailTextController.text,
                         password: _passwordTextController.text)
-                    .then((value) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
-                });
+                    .then((value) {});
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
               }),
               signUpOption()
             ],

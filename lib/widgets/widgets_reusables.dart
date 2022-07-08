@@ -11,7 +11,11 @@ TextFormField reusableTextField(String text, IconData icon, bool isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
     cursorColor: Colors.white,
-    validator: validateEmail,
+    validator: (value) {
+      if (value!.isEmpty) {
+        return 'Campo Requerido';
+      }
+    },
     style: TextStyle(color: Colors.white.withOpacity(0.9)),
     decoration: InputDecoration(
       prefixIcon: Icon(
