@@ -26,7 +26,7 @@ class _SignUpState extends State<SignUp> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
-          "Resgitrarse",
+          "Registrarse",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
