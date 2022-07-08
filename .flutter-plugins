@@ -1,4 +1,8 @@
 # This is a generated file; do not edit or check into version control.
+firebase_auth=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-3.4.1\\
+firebase_auth_web=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth_web-3.3.19\\
+firebase_core=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-1.19.1\\
+firebase_core_web=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core_web-1.6.6\\
 flutter_plugin_android_lifecycle=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_plugin_android_lifecycle-2.0.6\\
 geolocator=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geolocator-8.2.1\\
 geolocator_android=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geolocator_android-3.2.1\\

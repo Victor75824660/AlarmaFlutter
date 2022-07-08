@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/colors/colors2.dart';
+import 'package:flutter_golang_yt/screens/home_screen.dart';
 import 'package:flutter_golang_yt/screens/signup.dart';
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key? key}) : super(key: key);
@@ -37,16 +40,25 @@ class _SignInState extends State<SignIn> {
                 height: 25,
               ),
               reusableTextField("Ingrese su Email", Icons.verified_user, false,
-                  _emailTextController),
+                  _emailTextController, () {}),
               SizedBox(
                 height: 20,
               ),
               reusableTextField("Ingrese su Contraseña", Icons.lock, true,
-                  _emailTextController),
+                  _passwordTextController, () {}),
               SizedBox(
                 height: 20,
               ),
-              signInsignUpButton(context, true, () {}),
+              signInsignUpButton(context, true, () {
+                FirebaseAuth.instance
+                    .signInWithEmailAndPassword(
+                        email: _emailTextController.text,
+                        password: _passwordTextController.text)
+                    .then((value) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                });
+              }),
               signUpOption()
             ],
           ),

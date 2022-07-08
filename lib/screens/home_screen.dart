@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/colors/app_colors.dart';
@@ -35,8 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: EdgeInsets.fromLTRB(0, 15, 12, 0),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignIn()));
+                  FirebaseAuth.instance.signOut().then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignIn()));
+                    print("Se cerró sesión");
+                  });
                 },
                 child: Text(
                   'Cerrar sesión',

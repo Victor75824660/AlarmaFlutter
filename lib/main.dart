@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/controllers/data_controller.dart';
 import 'package:flutter_golang_yt/screens/home_screen.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_golang_yt/bd/mongobd.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MongoDB.conectar();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
