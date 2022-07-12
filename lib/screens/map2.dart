@@ -63,8 +63,6 @@ class _MiubicacionState extends State<Miubicacion> {
           googleMapController = controller;
         },
       ),
-      /**/
-
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           Position position = await _determinePosition();

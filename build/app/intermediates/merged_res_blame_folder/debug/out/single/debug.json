@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_iconsplash2.png.flat",
         "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\iconsplash2.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
-        "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_iconsplash2.png.flat",
         "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-xhdpi\\iconsplash2.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
+        "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
     {
         "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_iconsplash2.png.flat",
@@ -40,11 +40,11 @@
         "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_bg_colors.xml.flat",
-        "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\drawable-v21\\bg_colors.xml"
-    },
-    {
         "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_iconsplash2.png.flat",
         "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\mipmap-mdpi\\iconsplash2.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_bg_colors.xml.flat",
+        "source": "C:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\android\\app\\src\\main\\res\\drawable-v21\\bg_colors.xml"
     }
 ]

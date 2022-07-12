@@ -1,11 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/colors/colors2.dart';
+import 'package:flutter_golang_yt/modelos/usuario.dart';
 import 'package:flutter_golang_yt/screens/home_screen.dart';
-import 'package:flutter_golang_yt/services/signIn_validator.dart';
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_golang_yt/services/signIn_validator.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key? key}) : super(key: key);
@@ -232,6 +232,38 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
+  Future savedDatos() async {
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    User? user = FirebaseAuth.instance.currentUser;
+
+    try {
+      UserModel userModel = UserModel();
+      userModel.nombre = _userTextController.text;
+      userModel.uid = user!.uid;
+      userModel.dni = _dniTextController.text;
+      userModel.phone = _phoneTextController.text;
+      userModel.correo = _emailTextController.text;
+      await firebaseFirestore
+          .collection("User")
+          .doc(user.uid)
+          .set(userModel.toMap());
+
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    } catch (e) {
+      print(e.toString());
+      final snackBar = SnackBar(
+        content: SnackError(
+          errorText: e.toString(),
+        ),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+  }
+
   Future signUp(String email, String password) async {
     if (formKey.currentState!.validate()) {
       String ErrorMessage = '';
@@ -244,9 +276,9 @@ class _SignUpState extends State<SignUp> {
             )
             .then((value) => {
                   print("Cuenta Creada"),
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen())),
                 });
+
+        savedDatos();
       } on FirebaseAuthException catch (error) {
         ErrorMessage = error.message!;
 
@@ -276,7 +308,21 @@ class _SignUpState extends State<SignUp> {
             elevation: 0,
           );
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        }
+        if (ErrorMessage == 'The email address is badly formatted.') {
+          final text = "Ingrese un formato de correo válido";
+          final snackBar = SnackBar(
+            content: SnackError(
+              errorText: text,
+            ),
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          print(text.toString());
         } else {
+          print(error.message!.toString());
           final snackBar = SnackBar(
             content: SnackError(
               errorText: error.message!,

@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/colors/app_colors.dart';
-import 'package:flutter_golang_yt/screens/add_task.dart';
-import 'package:flutter_golang_yt/screens/all_tasks.dart';
 import 'package:flutter_golang_yt/screens/map.dart';
 import 'package:flutter_golang_yt/screens/map2.dart';
 import 'package:flutter_golang_yt/screens/signin.dart';
