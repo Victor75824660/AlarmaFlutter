@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,9 @@ import 'package:flutter_golang_yt/screens/map.dart';
 import 'package:flutter_golang_yt/screens/map2.dart';
 import 'package:flutter_golang_yt/screens/signin.dart';
 import 'package:flutter_golang_yt/screens/signup.dart';
+import 'package:lottie/lottie.dart';
+import 'package:flutter_golang_yt/colors/colors2.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'package:flutter_golang_yt/screens/ubicacion.dart';
 

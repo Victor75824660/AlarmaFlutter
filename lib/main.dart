@@ -2,10 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/controllers/data_controller.dart';
 import 'package:flutter_golang_yt/screens/home_screen.dart';
+import 'package:flutter_golang_yt/screens/prueba_validator_form.dart';
 import 'package:flutter_golang_yt/screens/signin.dart';
+import 'package:flutter_golang_yt/services/signIn_validator.dart';
+import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_golang_yt/bd/mongobd.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,30 +27,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => DataController());
-    loadData();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SignIn(), //HomePage(),
+      home: SplashScreen(), //HomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
