@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_golang_yt/colors/colors2.dart';
 import 'package:flutter_golang_yt/modelos/usuario.dart';
 import 'package:flutter_golang_yt/screens/home_screen.dart';
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key? key}) : super(key: key);
@@ -234,34 +237,47 @@ class _SignUpState extends State<SignUp> {
 
   Future savedDatos() async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    User? user = FirebaseAuth.instance.currentUser;
+    UserModel userModel = UserModel();
+    User user = FirebaseAuth.instance.currentUser!;
+    final SharedPreferences guardarToken =
+        await SharedPreferences.getInstance();
 
-    try {
-      UserModel userModel = UserModel();
-      userModel.nombre = _userTextController.text;
-      userModel.uid = user!.uid;
-      userModel.dni = _dniTextController.text;
-      userModel.phone = _phoneTextController.text;
-      userModel.correo = _emailTextController.text;
-      await firebaseFirestore
-          .collection("User")
-          .doc(user.uid)
-          .set(userModel.toMap());
+    userModel.nombre = _emailTextController.text;
+    userModel.uid = user.uid;
+    userModel.dni = _dniTextController.text;
+    userModel.phone = _phoneTextController.text;
+    userModel.correo = _emailTextController.text;
 
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
-    } catch (e) {
-      print(e.toString());
-      final snackBar = SnackBar(
-        content: SnackError(
-          errorText: e.toString(),
-        ),
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    }
+    firebaseFirestore
+        .collection("User")
+        .doc(user.uid)
+        .set(userModel.toMap())
+        .then((value) => () {
+              guardarToken.setString("Token", user.uid);
+            });
+
+    Navigator.pushAndRemoveUntil<dynamic>(
+        context,
+        MaterialPageRoute<dynamic>(
+            builder: (BuildContext context) => HomeScreen()),
+        ((route) => false));
+
+    String? Token = userModel.uid;
+    print("${Token} hola");
+  }
+
+  String? token;
+  Future<void> mostrarData() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+
+    token = await pref.getString('token');
+    print("${token}Holaaaaa");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    mostrarData();
   }
 
   Future signUp(String email, String password) async {
@@ -274,9 +290,7 @@ class _SignUpState extends State<SignUp> {
               email: _emailTextController.text,
               password: _passwordTextController.text,
             )
-            .then((value) => {
-                  print("Cuenta Creada"),
-                });
+            .then((value) => {print("Cuenta Creada")});
 
         savedDatos();
       } on FirebaseAuthException catch (error) {

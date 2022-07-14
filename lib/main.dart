@@ -1,29 +1,20 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_golang_yt/controllers/data_controller.dart';
-import 'package:flutter_golang_yt/screens/home_screen.dart';
-import 'package:flutter_golang_yt/screens/prueba_validator_form.dart';
-import 'package:flutter_golang_yt/screens/signin.dart';
-import 'package:flutter_golang_yt/services/signIn_validator.dart';
+
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 
 import 'package:get/get.dart';
-import 'package:flutter_golang_yt/bd/mongobd.dart';
-import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MongoDB.conectar();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  loadData() async {
-    await Get.find<DataController>().getData();
-  }
 
   @override
   Widget build(BuildContext context) {

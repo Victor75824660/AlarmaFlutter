@@ -1,4 +1,4 @@
-#Tue Jul 12 12:26:52 COT 2022
+#Thu Jul 14 03:06:07 COT 2022
 path.4=classes_2.dex
 path.3=classes_1.dex
 path.2=classes_0.dex
@@ -9,6 +9,8 @@ path.8=classes2.dex
 path.7=classes_5.dex
 path.6=classes_4.dex
 path.5=classes_3.dex
+renamed.11=classes12.dex
+renamed.10=classes11.dex
 path.0=classes.dex
 base.4=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_2.dex
 base.3=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_1.dex
@@ -18,9 +20,11 @@ base.0=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlu
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
+path.10=classes_7.dex
 renamed.0=classes.dex
 base.9=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_6.dex
 path.9=classes_6.dex
+path.11=classes_8.dex
 renamed.7=classes8.dex
 base.8=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 renamed.6=classes7.dex
@@ -29,3 +33,5 @@ renamed.5=classes6.dex
 base.6=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_4.dex
 renamed.4=classes5.dex
 base.5=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_3.dex
+base.11=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_8.dex
+base.10=C\:\\Users\\Usuario\\Desktop\\Certus_III_CICLO\\ISPPM\\Proyect\\AlarmaFlutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_7.dex

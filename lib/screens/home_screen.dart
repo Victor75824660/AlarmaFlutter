@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/colors/app_colors.dart';
+import 'package:flutter_golang_yt/modelos/usuario.dart';
 import 'package:flutter_golang_yt/screens/map.dart';
 import 'package:flutter_golang_yt/screens/map2.dart';
 import 'package:flutter_golang_yt/screens/signin.dart';
@@ -10,6 +11,8 @@ import 'package:flutter_golang_yt/screens/signup.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_golang_yt/colors/colors2.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter_golang_yt/screens/ubicacion.dart';
 
@@ -19,8 +22,6 @@ import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -108,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => cardInfo(""),
+                  Get.to(() => MapsPage(),
                       transition: Transition.fade,
                       duration: Duration(seconds: 1));
                 },
@@ -140,5 +141,23 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  UserModel dataUser = UserModel();
+  var user = FirebaseAuth.instance.currentUser!;
+
+  @override
+  void initState() {
+    print("${user.uid} + es el token");
+    String a = user.uid;
+    FirebaseFirestore.instance
+        .collection("User")
+        .doc(user.uid)
+        .get()
+        .then((value) => this.dataUser = UserModel.fromMap(value.data()));
+    setState(() {});
+
+    print("${a} + Tokentwo");
+    print(dataUser.nombre);
   }
 }

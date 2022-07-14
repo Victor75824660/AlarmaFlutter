@@ -3,6 +3,7 @@ import 'package:flutter_golang_yt/screens/confirm.dart';
 import 'package:flutter_golang_yt/widgets/cardinfo.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Miubicacion extends StatefulWidget {
   const Miubicacion({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _MiubicacionState extends State<Miubicacion> {
       target: LatLng(-12.045746722874203, -77.03055653148706), zoom: 14);
 
   Set<Marker> markers = {};
+  String? token;
 
   @override
   Widget build(BuildContext context) {
