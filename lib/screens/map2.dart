@@ -4,6 +4,7 @@ import 'package:flutter_golang_yt/widgets/cardinfo.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:intl/intl.dart';
 
 class Miubicacion extends StatefulWidget {
   const Miubicacion({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _MiubicacionState extends State<Miubicacion> {
 
   @override
   Widget build(BuildContext context) {
+    String time = '?';
     return Scaffold(
       appBar: AppBar(
         title: const Text("Encontrar mi ubicación"),
@@ -67,10 +69,16 @@ class _MiubicacionState extends State<Miubicacion> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
+          setState(() {
+            final now = DateTime.now();
+
+            time = DateFormat('dd-MM-yyyy | kk:mm').format(now);
+          });
+          print(time);
           Position position = await _determinePosition();
           String a = "${position.longitude}" + ',' "${position.latitude}";
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => cardInfo(a)));
+              .push(MaterialPageRoute(builder: (context) => cardInfo(a, time)));
         },
         label: const Text("Enviar una Alerta"),
         icon: const Icon(Icons.location_history),

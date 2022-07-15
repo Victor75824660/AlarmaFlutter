@@ -17,28 +17,30 @@ class _OptiosAlertState extends State<OptiosAlert> {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-        value: _selectionAlert,
-        items: _alertOptions
-            .map((e) => DropdownMenuItem(
-                  child: Text(e),
-                  value: e,
-                ))
-            .toList(),
-        onChanged: (val) {
-          setState(() {
-            _selectionAlert = val as String;
-          });
-        },
-        icon: const Icon(
-          Icons.arrow_drop_down_circle,
-          color: Colors.deepPurple,
-        ),
-        dropdownColor: Colors.deepPurple.shade50,
-        decoration: InputDecoration(
-            labelText: "Seleccione su tipo de Alerta",
-            prefixIcon:
-                Icon(Icons.security_update_rounded, color: Colors.deepPurple),
-            border: UnderlineInputBorder()));
+    return Container(
+      child: DropdownButtonFormField(
+          value: _selectionAlert,
+          items: _alertOptions
+              .map((e) => DropdownMenuItem(
+                    child: Text(e),
+                    value: e,
+                  ))
+              .toList(),
+          onChanged: (val) {
+            setState(() {
+              _selectionAlert = val as String;
+            });
+          },
+          icon: const Icon(
+            Icons.arrow_drop_down_circle,
+            color: Colors.deepPurple,
+          ),
+          dropdownColor: Colors.deepPurple.shade50,
+          decoration: InputDecoration(
+              labelText: "Seleccione su tipo de Alerta",
+              prefixIcon:
+                  Icon(Icons.security_update_rounded, color: Colors.deepPurple),
+              border: UnderlineInputBorder())),
+    );
   }
 }

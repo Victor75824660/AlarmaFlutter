@@ -13,7 +13,7 @@ class Report extends StatefulWidget {
 class _ReportState extends State<Report> {
   @override
   Widget build(BuildContext context) {
-    return cardInfo("");
+    return cardInfo("", "");
   }
 }
 

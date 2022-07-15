@@ -152,12 +152,12 @@ class _HomeScreenState extends State<HomeScreen> {
     String a = user.uid;
     FirebaseFirestore.instance
         .collection("User")
-        .doc(user.uid)
+        .doc("AN1O7zo8caVpyZc14PiTYHSxEPs1")
         .get()
         .then((value) => this.dataUser = UserModel.fromMap(value.data()));
     setState(() {});
 
     print("${a} + Tokentwo");
-    print(dataUser.nombre);
+    print(dataUser.dni);
   }
 }
