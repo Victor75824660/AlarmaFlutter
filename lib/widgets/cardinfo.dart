@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_golang_yt/screens/home_screen.dart';
 import 'package:flutter_golang_yt/screens/map2.dart';
 import 'package:flutter_golang_yt/modelos/usuario.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -18,25 +20,6 @@ class cardInfo extends StatefulWidget {
 }
 
 class _cardInfoState extends State<cardInfo> {
-  UserModel dataUser = UserModel();
-  final user = FirebaseAuth.instance.currentUser!;
-
-  @override
-  void initState() {
-    super.initState();
-    FirebaseFirestore.instance.collection("User").get().then((resultados) {
-      resultados.docs.forEach((element) {
-        print(element.data());
-      });
-    });
-    setState(() {});
-    FirebaseFirestore.instance
-        .collection("User")
-        .doc(user.uid)
-        .get()
-        .then((value) => this.dataUser = UserModel.fromMap(value.data()));
-  }
-
   @override
   Widget build(BuildContext context) {
     bool isChecked = false;
@@ -53,6 +36,7 @@ class _cardInfoState extends State<cardInfo> {
               child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Card(
+              clipBehavior: Clip.none,
               elevation: 16,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
@@ -85,7 +69,7 @@ class _cardInfoState extends State<cardInfo> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          left: 16, top: 16, right: 16, bottom: 0),
+                          left: 16, top: 16, right: 16, bottom: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -95,9 +79,39 @@ class _cardInfoState extends State<cardInfo> {
                           ),
                           Text("Fecha: " + widget.time,
                               style: TextStyle(color: Colors.black54)),
-                          Text('Nombre:  '),
-                          Text('Numero de Celular:  '),
-                          Text('DNI: '),
+                          FutureBuilder(
+                            future: traerDataUsuario(),
+                            builder:
+                                (BuildContext context, AsyncSnapshot snapshot) {
+                              if (snapshot.hasData) {
+                                return Text("Nombre : ${snapshot.data}");
+                              } else {
+                                return CircularProgressIndicator();
+                              }
+                            },
+                          ),
+                          FutureBuilder(
+                            future: traerDataUsuario2(),
+                            builder:
+                                (BuildContext context, AsyncSnapshot snapshot) {
+                              if (snapshot.hasData) {
+                                return Text("Celular : ${snapshot.data}");
+                              } else {
+                                return CircularProgressIndicator();
+                              }
+                            },
+                          ),
+                          FutureBuilder(
+                            future: traerDataUsuario3(),
+                            builder:
+                                (BuildContext context, AsyncSnapshot snapshot) {
+                              if (snapshot.hasData) {
+                                return Text("DNI : ${snapshot.data}");
+                              } else {
+                                return CircularProgressIndicator();
+                              }
+                            },
+                          ),
                         ],
                       ),
                     ),
@@ -120,11 +134,13 @@ class _cardInfoState extends State<cardInfo> {
                             }
                           },
                           onChanged: (val) {
-                            setState(() {
-                              if (val != null) {
-                                _selectionAlert = val as String;
-                              }
-                            });
+                            if (mounted) {
+                              setState(() {
+                                if (val == null) {
+                                  _selectionAlert = val as String;
+                                }
+                              });
+                            }
                           },
                           icon: const Icon(
                             Icons.arrow_drop_down_circle,
@@ -139,7 +155,7 @@ class _cardInfoState extends State<cardInfo> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          left: 16, top: 20, right: 16, bottom: 0),
+                          left: 16, top: 80, right: 16, bottom: 0),
                       child: Row(
                         children: [
                           Checkbox(
@@ -160,11 +176,13 @@ class _cardInfoState extends State<cardInfo> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,
-                      margin: const EdgeInsets.fromLTRB(10, 40, 10, 20),
+                      margin: const EdgeInsets.fromLTRB(10, 100, 10, 20),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(90)),
                       child: ElevatedButton(
-                        onPressed: isChecked ? displayMessage : null,
+                        onPressed: () {
+                          isChecked ? displayMessage : null;
+                        },
                         child: Text(
                           "Enviar alerta",
                           style: const TextStyle(
@@ -201,8 +219,7 @@ class _cardInfoState extends State<cardInfo> {
         context: context,
         builder: (BuildContext context) {
           AlertDialog dialog = AlertDialog(
-            content: Text(
-                "Esta alerta está sujeta a una declaración jurarda\n¿Desea enviar la alerta?"),
+            content: Text("Esta alerta está sujeta a una declaración jurarda"),
             actions: [
               FloatingActionButton(
                   child: Text("Ok"),
@@ -213,5 +230,44 @@ class _cardInfoState extends State<cardInfo> {
           );
           return dialog;
         });
+  }
+
+  UserModel dataUser = UserModel();
+
+  Future traerDataUsuario() async {
+    var user = FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance
+        .collection("User")
+        .doc(user.uid)
+        .get()
+        .then((value) => this.dataUser = UserModel.fromMap(value.data()));
+    if (mounted) setState(() {});
+    return dataUser.nombre;
+  }
+
+  UserModel dataUser2 = UserModel();
+
+  Future traerDataUsuario2() async {
+    var user = FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance
+        .collection("User")
+        .doc(user.uid)
+        .get()
+        .then((value) => this.dataUser2 = UserModel.fromMap(value.data()));
+    if (mounted) setState(() {});
+    return dataUser2.phone;
+  }
+
+  UserModel dataUser3 = UserModel();
+
+  Future traerDataUsuario3() async {
+    var user = FirebaseAuth.instance.currentUser!;
+    await FirebaseFirestore.instance
+        .collection("User")
+        .doc(user.uid)
+        .get()
+        .then((value) => this.dataUser3 = UserModel.fromMap(value.data()));
+    if (mounted) setState(() {});
+    return dataUser3.dni;
   }
 }

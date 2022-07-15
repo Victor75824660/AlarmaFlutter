@@ -1,5 +1,8 @@
+// ignore_for_file: use_key_in_widget_constructors, unused_import, unnecessary_import, duplicate_import, prefer_const_constructors
+
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/colors/app_colors.dart';
@@ -21,6 +24,13 @@ import 'package:flutter_golang_yt/widgets/cardinfo.dart';
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:get/get.dart';
 
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp().then((value) {
+    runApp(HomeScreen());
+  });
+}
+
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -36,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         actions: [
           Container(
-              margin: EdgeInsets.fromLTRB(0, 15, 12, 0),
+              margin: EdgeInsets.fromLTRB(0, 3, 12, 5),
               child: ElevatedButton(
                 onPressed: () {
                   FirebaseAuth.instance.signOut().then((value) {
@@ -69,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundcolor: Color.fromARGB(255, 243, 255, 10),
                     text: "Enviar una Alerta",
                     textColor: Colors.black),
-              )
+              ),
             ]),
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -144,20 +154,33 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   UserModel dataUser = UserModel();
-  var user = FirebaseAuth.instance.currentUser!;
 
-  @override
-  void initState() {
-    print("${user.uid} + es el token");
-    String a = user.uid;
-    FirebaseFirestore.instance
+  Future traerDataUsuario() async {
+    var user = FirebaseAuth.instance.currentUser!;
+    print(user.uid);
+    await FirebaseFirestore.instance
         .collection("User")
-        .doc("AN1O7zo8caVpyZc14PiTYHSxEPs1")
+        .doc(user.uid)
         .get()
         .then((value) => this.dataUser = UserModel.fromMap(value.data()));
-    setState(() {});
-
-    print("${a} + Tokentwo");
-    print(dataUser.dni);
+    setState(() {
+      print(dataUser.dni);
+    });
   }
+
+  // @override
+  // void initState() {
+  //   print("${user.uid} + es el token");
+  //   String a = user.uid;
+  //   FirebaseFirestore.instance
+  //       .collection("User")
+  //       .doc("AN1O7zo8caVpyZc14PiTYHSxEPs1")
+  //       .get()
+  //       .then((value) => this.dataUser = UserModel.fromMap(value.data()));
+  //   setState(() {
+  //     print(dataUser.dni);
+  //   });
+
+  //   print("${a} + Tokentwo");
+  // }
 }

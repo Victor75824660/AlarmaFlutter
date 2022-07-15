@@ -72,6 +72,22 @@ Container signInsignUpButton(
   );
 }
 
+Container TermsCheck(BuildContext context, value, onChanged) {
+  return Container(
+    child: Padding(
+      padding: EdgeInsets.only(left: 16, top: 80, right: 16, bottom: 0),
+      child: Row(children: [
+        Checkbox(value: value, onChanged: onChanged),
+        Container(
+          margin: EdgeInsets.only(left: 4),
+          child: Text(
+              "Acepto los términos y condiciones \npara el envío de la alerta"),
+        ),
+      ]),
+    ),
+  );
+}
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 

@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_golang_yt/modelos/usuario.dart';
 import 'package:flutter_golang_yt/screens/confirm.dart';
 import 'package:flutter_golang_yt/widgets/cardinfo.dart';
 import 'package:geolocator/geolocator.dart';
@@ -52,6 +55,7 @@ class _MiubicacionState extends State<Miubicacion> {
                 String a = "${position.longitude}" + ',' "${position.latitude}";
 
                 guardarUbi();
+                traerDataUsuario();
 
                 setState(() {});
               },
@@ -71,11 +75,12 @@ class _MiubicacionState extends State<Miubicacion> {
         onPressed: () async {
           setState(() {
             final now = DateTime.now();
-
+            traerDataUsuario();
             time = DateFormat('dd-MM-yyyy | kk:mm').format(now);
           });
           print(time);
           Position position = await _determinePosition();
+
           String a = "${position.longitude}" + ',' "${position.latitude}";
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => cardInfo(a, time)));
@@ -114,5 +119,20 @@ class _MiubicacionState extends State<Miubicacion> {
     Position position = await Geolocator.getCurrentPosition();
 
     return position;
+  }
+
+  UserModel dataUser = UserModel();
+
+  Future traerDataUsuario() async {
+    var user = FirebaseAuth.instance.currentUser!;
+    print(user.uid);
+    await FirebaseFirestore.instance
+        .collection("User")
+        .doc(user.uid)
+        .get()
+        .then((value) => this.dataUser = UserModel.fromMap(value.data()));
+    setState(() {
+      print(dataUser.dni);
+    });
   }
 }
