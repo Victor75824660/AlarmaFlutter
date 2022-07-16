@@ -26,4 +26,10 @@ class UserModel2 {
       'date': date
     };
   }
+
+  UserModel2.fromSnapshot(snapshot)
+      : uid = snapshot.data()['uid'],
+        ubication = snapshot.data()['ubication'],
+        tipeAlarm = snapshot.data()['tipeAlarm'],
+        date = snapshot.data()['date'];
 }

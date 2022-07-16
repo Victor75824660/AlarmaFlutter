@@ -181,7 +181,7 @@ class _cardInfoState extends State<cardInfo> {
                           Container(
                             width: MediaQuery.of(context).size.width,
                             height: 60,
-                            margin: const EdgeInsets.fromLTRB(10, 100, 10, 20),
+                            margin: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(90)),
                             child: ElevatedButton(
@@ -263,7 +263,9 @@ class _cardInfoState extends State<cardInfo> {
                       RaisedButton(
                         onPressed: () async {
                           guardarAlarm(tipeAlarm);
-                          Navigator.of(context).pop();
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
                         },
                         child: Text(
                           "ENVIAR",

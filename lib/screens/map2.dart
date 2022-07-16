@@ -30,7 +30,7 @@ class _MiubicacionState extends State<Miubicacion> {
     String time = '?';
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Encontrar mi ubicación"),
+        title: const Text("Enviar mi Ubicación"),
         centerTitle: true,
         actions: [
           IconButton(

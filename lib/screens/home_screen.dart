@@ -9,6 +9,7 @@ import 'package:flutter_golang_yt/colors/app_colors.dart';
 import 'package:flutter_golang_yt/modelos/usuario.dart';
 import 'package:flutter_golang_yt/screens/map.dart';
 import 'package:flutter_golang_yt/screens/map2.dart';
+import 'package:flutter_golang_yt/screens/showAlerts.dart';
 import 'package:flutter_golang_yt/screens/signin.dart';
 import 'package:flutter_golang_yt/screens/signup.dart';
 import 'package:lottie/lottie.dart';
@@ -23,6 +24,7 @@ import 'package:flutter_golang_yt/widgets/button_widget.dart';
 import 'package:flutter_golang_yt/widgets/cardinfo.dart';
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -105,13 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => MapsPage(),
-                      transition: Transition.fade,
-                      duration: Duration(seconds: 1));
+                  launch('tel:105');
                 },
                 child: ButtonWidget(
                     backgroundcolor: Colors.green,
-                    text: "Mostrar Mapa",
+                    text: "Llamar a las Autoridades",
                     textColor: Colors.black),
               ),
               const SizedBox(
@@ -119,7 +119,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => MapsPage(),
+                  Get.to(() => showAlert(),
+                      // Navigator.of(context).push(MaterialPageRoute(builder: (context) => showAlert())),
                       transition: Transition.fade,
                       duration: Duration(seconds: 1));
                 },

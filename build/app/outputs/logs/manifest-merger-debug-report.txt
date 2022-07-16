@@ -11,6 +11,8 @@ MERGED from [:firebase_core] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Pro
 MERGED from [:firebase_core] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:geolocator_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:geolocator_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [:location] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-16:19
 MERGED from [:location] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-16:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\cc034edf92bc15587d68206311a40d2f\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:7:5-15:19
@@ -95,6 +97,7 @@ MERGED from [:firebase_core] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Pro
 MERGED from [:geolocator_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:google_maps_flutter] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:location] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\cc034edf92bc15587d68206311a40d2f\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.1.1] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\d3b8f6d81bf2913335f9e2239103ca79\jetified-firebase-common-ktx-20.1.1\AndroidManifest.xml:2:1-21:12
@@ -196,6 +199,8 @@ MERGED from [:google_maps_flutter] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISP
 MERGED from [:google_maps_flutter] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:location] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:location] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\cc034edf92bc15587d68206311a40d2f\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:5:5-44
@@ -520,6 +525,14 @@ ADDED from [:geolocator_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM
 		ADDED from [:geolocator_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-53
 	android:name
 		ADDED from [:geolocator_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-77
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher_android] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from [:location] C:\Users\Usuario\Desktop\Certus_III_CICLO\ISPPM\Proyect\AlarmaFlutter\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-81
 	android:name
