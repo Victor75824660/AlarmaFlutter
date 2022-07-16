@@ -63,8 +63,8 @@
 37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 37-->[androidx.core:core:1.6.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\f910e53d48c9bb13b167634611201768\core-1.6.0\AndroidManifest.xml:24:18-86
 38        android:debuggable="true"
-39        android:icon="@mipmap/ic_launcher"
-40        android:label="flutter_golang_yt" >
+39        android:icon="@mipmap/launcher_icon"
+40        android:label="Zona Segura" >
 41        <meta-data
 42            android:name="com.google.android.geo.API_KEY"
 43            android:value="AIzaSyDHBcNgu-ZEa5erzdk17AjP3z0ujf92Pmg" />

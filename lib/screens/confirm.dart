@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_const_constructors_in_immutables, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter_golang_yt/widgets/cardinfo.dart';

@@ -44,13 +44,17 @@ TextFormField reusableTextField(String text, IconData icon, bool isPasswordType,
 }
 
 Container signInsignUpButton(
-    BuildContext context, bool isLogin, Function onTap) {
+  BuildContext context,
+  bool isLogin,
+  Function onTap,
+) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 50,
     margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
     child: ElevatedButton(
+      key: Key("test_key"),
       onPressed: () {
         onTap();
       },
@@ -81,7 +85,7 @@ Container TermsCheck(BuildContext context, value, onChanged) {
         Container(
           margin: EdgeInsets.only(left: 4),
           child: Text(
-              "Acepto los términos y condiciones \npara el envío de la alerta"),
+              "Acepto los términos y condiciones para\nel envío de la alerta"),
         ),
       ]),
     ),

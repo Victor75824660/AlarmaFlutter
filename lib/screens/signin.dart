@@ -7,8 +7,24 @@ import 'package:flutter_golang_yt/screens/home_screen.dart';
 import 'package:flutter_golang_yt/screens/signup.dart';
 import 'package:flutter_golang_yt/widgets/widgets_reusables.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:provider/provider.dart';
+
+class emailFieldValidator {
+  static String validate(String value) {
+    if (value!.isEmpty ||
+        RegExp(r"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\ [a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\ )+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$")
+            .hasMatch(value)) {
+      return "Coloca un email correcto";
+    } else {
+      return "";
+    }
+  }
+}
+
+class passwordFieldValidator {
+  static String validate(String value) {
+    return value.isEmpty ? "La casilla está vacía" : "";
+  }
+}
 
 class SignIn extends StatefulWidget {
   SignIn({Key? key}) : super(key: key);

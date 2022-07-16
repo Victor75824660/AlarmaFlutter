@@ -10,6 +10,38 @@ import 'package:provider/provider.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+class nameFieldFormValidator {
+  static String validate(String value) {
+    if (value!.isEmpty || RegExp(r"/^[a-z ,.'-]").hasMatch(value)) {
+      return "Coloca tus nombres correctamente";
+    } else {
+      return "";
+    }
+  }
+}
+
+class dniFieldFormValidator {
+  static String validate(String value) {
+    if (value!.isEmpty || RegExp(r"^[0. 9]+$").hasMatch(value)) {
+      return "Coloca un DNI correcto";
+    } else {
+      return "";
+    }
+  }
+}
+
+class phoneFieldValidator {
+  static String validate(String value) {
+    if (value!.isEmpty ||
+        RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]+$]')
+            .hasMatch(value)) {
+      return "Coloca un celular correcto";
+    } else {
+      return "";
+    }
+  }
+}
+
 class SignUp extends StatefulWidget {
   SignUp({Key? key}) : super(key: key);
 

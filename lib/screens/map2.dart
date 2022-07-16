@@ -52,7 +52,8 @@ class _MiubicacionState extends State<Miubicacion> {
                       "${position.longitude}" + ',' + "${position.latitude}");
                 }
 
-                String a = "${position.longitude}" + ',' "${position.latitude}";
+                String a =
+                    "${position.longitude}" + '; ' " ${position.latitude}";
 
                 guardarUbi();
                 traerDataUsuario();
@@ -81,7 +82,7 @@ class _MiubicacionState extends State<Miubicacion> {
           print(time);
           Position position = await _determinePosition();
 
-          String a = "${position.longitude}" + ',' "${position.latitude}";
+          String a = "${position.longitude}" + ',' " ${position.latitude}";
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => cardInfo(a, time)));
         },
